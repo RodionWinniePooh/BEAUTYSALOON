@@ -1,0 +1,470 @@
+@font-face{
+	src:url("../font/Roboto-Regular.ttf") format("truetype");
+	font-family: "Roboto";
+}
+
+:root {
+    --bg-color-first: #475477;
+    --bg-color-second: #28314E;
+    --font-size-main: 18px; 
+    --font-size-btn: 16px;
+}
+
+input {outline:none;}
+
+
+.grid {
+    display: grid;
+    grid-gap: 10px;
+    grid-template-rows: 1fr 2fr 2fr;
+    grid-template-areas:
+        "header_logo"
+        "exit_account"
+        "header_li"
+        "article_search_table"
+        "article_view_table"
+        "article_add_table"
+        "article_delete_table"
+        "aside_table"
+        "footer"
+        "aside_left"
+        "aside_right";
+}
+
+.grid_edit{
+    display: grid;
+    grid-gap: 10px;
+    grid-template-rows: 1fr 2fr 2fr;
+    grid-template-areas:
+        "header_logo"
+        "exit_account"
+        "header_li"
+        "article_edit_table"
+        "aside_table"
+        "footer"
+        "aside_left"
+        "aside_right";
+}
+
+.grid_main_admin{
+    display: grid;
+    grid-gap: 10px;
+    grid-template-rows: 1fr 1fr 1fr 3fr 4fr 4fr 4fr;
+    grid-template-areas:
+        "header_logo"
+        "exit_account"
+        "header_li"
+        "aside_table"
+        "text_for_first_query"
+        "query_recorded_today"
+        "text_for_second_query"
+        "query_rendered_service"
+        "text_for_third_query"
+        "query_consumption_material"
+        "footer"
+        "aside_left"
+        "aside_right";
+}
+
+.grid_setting{
+    display: grid;
+    grid-gap: 10px;
+    grid-template-rows: 1fr 1fr 1fr 3fr 1fr;
+    grid-template-areas:
+        "header_logo"
+        "exit_account"
+        "header_li"
+        "aside_table"
+        "text_for_theme"
+        "setting_theme_color"
+        "setting_theme_font"
+        "footer"
+        "aside_left"
+        "aside_right";
+}
+
+.text_for_theme{
+    grid-area: text_for_theme;
+}
+
+.setting_theme_color{
+    grid-area: setting_theme_color;
+}
+
+.setting_theme_font{
+    grid-area: setting_theme_font;
+}
+
+.text_for_first_query{
+    grid-area: text_for_first_query;
+}
+
+.text_for_second_query{
+    grid-area: text_for_second_query;
+}
+
+.text_for_third_query{
+    grid-area: text_for_third_query;
+}
+
+.query_consumption_material{
+    grid-area: query_consumption_material;
+}
+
+.query_rendered_service{
+    grid-area: query_rendered_service
+}
+
+.article_edit_table{
+    grid-area: article_edit_table;
+}
+
+
+
+.header_logo {
+    grid-area: header_logo;
+}
+
+.header_li {
+    grid-area: header_li;
+}
+
+.exit_account {
+    grid-area: exit_account;
+}
+
+.aside_left{
+    grid-area: aside_left;
+    background-color: white !important;
+    border: none !important;
+}
+
+.aside_right{
+    grid-area: aside_right;
+    background-color: white !important;
+    border: none !important;
+}
+
+.article_view_table{
+    grid-area: article_view_table;
+
+}
+
+.article_add_table{
+    grid-area: article_add_table;
+}
+
+.article_delete_table{
+    grid-area: article_delete_table;
+}
+
+.article_search_table{
+    grid-area: article_search_table;
+}
+
+.aside_search{
+    grid-area: aside_search;
+}
+
+.query_recorded_today{
+    grid-area: query_recorded_today;
+}
+
+
+
+.service_table {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+.query_table {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+h2{
+    font-family: sans-serif !important;
+}
+
+article {
+    grid-area: article;
+}
+
+.aside_table {
+    grid-area: aside_table;
+}
+
+footer {
+    grid-area: footer;
+}
+
+ol {
+    padding: 0px;
+}
+
+li {
+    display: inline;
+}
+
+textarea{
+    resize: vertical;
+}
+
+.material_table>thead th {
+    position: sticky;
+    top: 0;
+    background: var(--bg-color-first);
+    font-weight: normal;
+}
+
+.material_table>thead th {
+    position: sticky;
+    top: 0;
+    background: var(--bg-color-first);
+    font-weight: normal;
+}
+
+.service_table>thead th {
+    position: sticky;
+    top: 0;
+    background: var(--bg-color-first);
+    font-weight: normal;
+}
+
+.material_table>thead th {
+    position: sticky;
+    top: 0;
+    background: var(--bg-color-first);
+    font-weight: normal;
+}
+
+.freeorder_table>thead th {
+    position: sticky;
+    top: 0;
+    background: var(--bg-color-first);
+    font-weight: normal;
+}
+
+.employee_table>thead th {
+    position: sticky;
+    top: 0;
+    background: var(--bg-color-first);
+    font-weight: normal;
+}
+
+.customer_table>thead th {
+    position: sticky;
+    top: 0;
+    background: var(--bg-color-first);
+    font-weight: normal;
+}
+
+.name_table{
+    text-align:left;
+}
+
+.rectangle_btn{
+    cursor: pointer;
+    text-decoration: none;
+    color: white;
+    border: none;
+    font-size: var(--font-size-btn);
+    padding: 5px 5px;
+    text-align: center;
+    border-radius: 5px;
+}
+
+.btn_red{
+    background-color: #f44336;
+}
+
+.btn_gray{
+    background-color: #e7e7e7; color: black;
+}
+
+.btn_green{
+    background-color: #4CAF50; color: white;
+}
+
+.input_min{
+    border: none;
+    text-decoration: none;
+    font-size: var(--font-size-btn);
+    outline: none;
+    border-radius: 5px;
+    padding: 5px 5px;
+}
+
+.widget-list { /* Стили для asidetable */
+    padding: 0;
+    list-style: none;
+    }
+
+.widget-list a {
+    text-decoration: none;
+    outline: none;
+    display: block; /* По сути заполняет всю строку и получается что другие элементы не могут располагаться в строку */
+    padding: 6px 0;
+}
+
+#point_cursor{
+    cursor: pointer;
+}
+
+/* #result id для работы с scrollbar его стилизация */
+#result::-webkit-scrollbar-track
+{
+    background-color: var(--bg-color-first);
+    position: releative;
+}
+
+#result::-webkit-scrollbar
+{
+    width: 12px;
+    background-color: var(--bg-color-first);
+}
+
+#result::-webkit-scrollbar-thumb
+{
+    background-color: var(--bg-color-second);
+    border-radius: 5px;
+}
+
+#result::-webkit-scrollbar-corner
+{
+    background-color: var(--bg-color-first);
+}
+
+#this_page{
+    color: orange;
+}
+
+
+.grid>* {
+    background-color: var(--bg-color-second);
+    border-radius: 5px;
+    padding: 8px 15px;
+    color: #ffffff;
+    font-size: var(--font-size-main);
+    font-family: Roboto;
+}
+
+
+.grid_edit>* {
+    background-color: var(--bg-color-second);
+    border-radius: 5px;
+    padding: 8px 15px;
+    color: #ffffff;
+    font-size: var(--font-size-main);
+    font-family: Roboto;
+}
+
+.grid_main_admin>* {
+    background-color: var(--bg-color-second);
+    border-radius: 5px;
+    padding: 8px 15px;
+    color: #ffffff;
+    font-size: var(--font-size-main);
+    font-family: Roboto;
+}
+
+.grid_setting>* {
+    background-color: var(--bg-color-second);
+    border-radius: 5px;
+    padding: 8px 15px;
+    color: #ffffff;
+    font-size: var(--font-size-main);
+    font-family: Roboto;
+}
+
+.grid>*:nth-child(odd) { /* Каждый четный элемент присваиваем другой цвет */
+    background-color: var(--bg-color-first);
+}
+
+.grid_edit>*:nth-child(odd) { /* Каждый четный элемент присваиваем другой цвет */
+    background-color: var(--bg-color-first);
+}
+
+.grid_main_admin>*:nth-child(odd) { /* Каждый четный элемент присваиваем другой цвет */
+    background-color: var(--bg-color-first);
+}
+
+.grid_setting>*:nth-child(odd) { /* Каждый четный элемент присваиваем другой цвет */
+    background-color: var(--bg-color-first);
+}
+
+@media (min-width: 1280px) { /* Если больше 768 делаем!*/
+    .grid_main_admin {
+        grid-template-columns: 1fr 1fr 3fr 1fr 1fr;
+        grid-template-rows: 125px 1fr 5fr 1.5fr 5fr 1fr 5fr 1fr;
+        grid-template-areas:
+            "aside_left     header_logo header_li                  exit_account                 aside_right"
+
+            "aside_left     aside_table text_for_first_query       text_for_first_query         aside_right"
+            "aside_left     aside_table query_recorded_today       query_recorded_today         aside_right"
+
+            "aside_left     aside_table text_for_second_query      text_for_second_query        aside_right"
+            "aside_left     aside_table query_rendered_service     query_rendered_service       aside_right"
+
+            "aside_left     aside_table text_for_third_query       text_for_third_query         aside_right"
+            "aside_left     aside_table query_consumption_material query_consumption_material   aside_right"
+
+            "aside_left     aside_table footer                     footer                       aside_right"
+    
+}
+
+@media (min-width: 1280px) { /* Если больше 768 делаем!*/
+    .grid_setting {
+        grid-template-columns: 1fr 1fr 2fr 2fr 1fr;
+        grid-template-rows: 125px 1fr 5fr 1fr;
+        grid-template-areas:
+            "aside_left     header_logo header_li            exit_account      aside_right"
+            "aside_left     aside_table text_for_theme       text_for_theme    aside_right"
+            "aside_left     aside_table setting_theme_color  setting_theme_font     aside_right"
+            "aside_left     aside_table footer               footer            aside_right"
+}
+
+@media (min-width: 768px) { /* Если больше 768 делаем!*/
+    .grid_edit {
+        grid-template-columns: 1fr 1fr 3fr 1fr 1fr;
+        grid-template-rows: 125px 5fr 1fr;
+        grid-template-areas:
+            "aside_left     header_logo header_li            exit_account           aside_right"
+            "aside_left     aside_table article_edit_table   article_edit_table     aside_right"
+            "aside_left     aside_table footer               footer                 aside_right"
+    
+}
+
+@media (min-width: 768px) { /* Если больше 768 делаем!*/
+    .grid {
+        grid-template-columns: 1fr 1fr 2fr 2fr 1fr;
+        grid-template-rows: 125px 1.2fr 4fr 8fr 1fr 1fr;
+        grid-template-areas:
+            "aside_left header_logo header_li            exit_account         aside_right"
+            "aside_left aside_table article_search_table article_search_table aside_right"
+            "aside_left aside_table article_view_table   article_view_table   aside_right"
+            "aside_left aside_table article_add_table    article_delete_table aside_right"
+
+            "aside_left aside_table footer               footer               aside_right"
+    }
+}
+
+
+/*@media (min-width: 992px) and (max-width: 1199px) {  Если больше 768 делаем!
+    .grid {
+        grid-template-columns: 1fr 1fr 4fr 1fr 1fr;
+        grid-template-rows: 1fr 1fr 4fr 4fr 1fr 1fr;
+        grid-template-areas:
+            "aside_left header_logo header_li            exit_account         aside_right"
+            "aside_left aside_table article_search_table article_search_table aside_right"
+            "aside_left aside_table article_view_table   article_view_table   aside_right"
+            "aside_left aside_table article_add_table    article_add_table    aside_right"
+            "aside_left aside_table article_delete_table article_delete_table aside_right"
+            "aside_left aside_table footer               footer               aside_right"
+    }
+}*/
+
+
+
+
+

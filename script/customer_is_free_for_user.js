@@ -1,0 +1,38 @@
+$(document).ready(function(){
+            
+    var time = $(this).val();
+    var date = $('#DateNow').val();
+
+    load_data(time,date);
+    
+    function load_data(time, date)
+    {
+        $.ajax({
+            url:"/visit_customer_is_free_for_user.php",
+            method:"POST",
+            data:{time:time, date:date},
+            success:function(data)
+            {
+                $('#customer_is_free').html(data);
+            }
+        });
+    }
+
+    $('#visit').keyup(
+        function(){
+            var time = $(this).val();
+            var date = $('#DateNow').val();
+
+            if(time != '' && date != '')
+            {
+                load_data(time, date);
+            }
+            else
+            {
+                load_data();
+            }
+        }
+    );
+
+
+});

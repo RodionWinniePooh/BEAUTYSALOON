@@ -1,0 +1,871 @@
+body{
+    margin:0;
+}
+
+:root {
+    --bg-color-first: #2c5750;
+    --bg-color-second: black;
+    --font-size-btn: 16px;
+}
+
+input {outline:none;}
+select{border: none !important; }
+
+
+.grid {
+    display: grid;
+    grid-template-rows: 400px 400px 1400px 450px;
+    grid-template-areas:
+        "header_main"
+        "div_front_side"
+        "div_we_provide"
+        "footer";
+}
+
+.grid_about_us{
+    display: grid;
+    grid-template-rows: 400px 1700px 450px 450px;
+    grid-template-areas:
+        "header_main"
+        "div_about_us"
+        "div_about_us_map"
+        "footer";
+}
+
+.grid_service_price{
+    display: grid;
+    grid-template-rows: 700px 400px;
+    grid-template-areas:
+        "div_list_of_services"
+        "div_service_prices";
+}
+
+.grid_service{
+    display: grid;
+    grid-template-rows: 400px 3200px 450px;
+    grid-template-areas:
+        "header_main"
+        "div_main_service"
+        "footer";
+}
+
+.grid_div_we_provide {
+    display:grid;
+    grid-template-rows: 1fr 1fr 1fr;
+    grid-template-areas:
+
+        "we_provide_first"
+        "we_provide_second"
+        "we_provide_third";
+}
+
+.grid_main_photo{
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+    grid-template-areas:
+
+        "div_main_photo_null"
+ 
+        
+        "div_main_photo_full";
+}
+
+.grid_main_header{
+    display: grid;
+    grid-template-rows: 1fr 2fr 1fr;
+    grid-template-areas:
+
+        "header_logo"
+        "header_li"
+        "header_dropdown_menu"
+        "header_telephone";
+}
+
+.grid_div_footer{
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-areas: 
+        "div_logo_footer"
+        "div_info_footer"
+        "div_contact_footer"
+        "div_social_footer";
+}
+
+.grid_main_user{
+    display: grid;
+    grid-gap: 10px;
+    grid-template-rows: 1fr 1fr 3fr 4fr 0fr 0fr;
+    grid-template-areas:
+        "header_logo"
+        "header_li_user"
+        "aside_table"
+        "article_edit_personal_data_user"
+      
+        "aside_left"
+        "aside_right";
+}
+
+
+
+
+.service_table{
+    border-collapse: collapse;
+    background-color: #ede6d49c;
+    border-radius: 10px;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -khtml-border-radius: 10px;
+ 
+}
+
+.card_provide{
+    background-color:#ede6d4; 
+    border-radius:4px; 
+    width:300px; 
+    height:400px; 
+    box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+}
+
+.div_main_service{
+    grid-area: div_main_service;
+    background: url(/library/background_service_2.jpg) 100% 20% no-repeat; /* Добавляем фон */
+    background-size: cover; /* Масштабируем фон */
+}
+
+.div_about_us_map{
+    grid-area: div_about_us_map;
+}
+
+.div_about_us{
+    grid-area: div_about_us;
+}
+
+.div_list_of_services{
+    grid-area: div_list_of_services;
+}
+
+.article_edit_personal_data_user{
+    grid-area: article_edit_personal_data_user;
+}
+
+.div_service_prices{
+    grid-area: div_service_prices;
+}
+
+.header_dropdown_menu{
+    grid-area: header_dropdown_menu;
+    text-align:center;
+}
+
+.div_social_footer{
+    grid-area: div_social_footer;
+}
+
+.aside_table{
+    grid-area: aside_table;
+}
+
+.div_logo_footer{
+    grid-area: div_logo_footer;
+}
+
+.div_info_footer{
+    grid-area: div_info_footer;
+}
+
+.div_contact_footer{
+    grid-area: div_contact_footer;
+}
+
+.we_provide_first{
+    grid-area: we_provide_first;
+}
+
+.we_provide_second{
+    grid-area: we_provide_second;
+}
+
+.we_provide_third{
+    grid-area: we_provide_third;
+}
+
+.div_we_provide{
+    grid-area: div_we_provide;
+}
+
+.header_main{
+    grid-area: header_main;
+}
+
+.header_logo {
+    grid-area: header_logo;
+}
+
+.header_li {
+    grid-area: header_li;
+    margin-top: 0.5em;
+    text-align: center;
+}
+
+.header_li_user{
+    grid-area: header_li_user;
+}
+
+.header_telephone {
+    grid-area: header_telephone;
+}
+
+.div_tel_main{  /* Главный блок с номерами телефонов*/
+    display:block;
+    margin-top: 0.7em;
+    margin-left: 2.5em;
+}
+
+.div_tel_child{ /* Блок с номерами телефонов */
+    display:flex; 
+    margin:4px;
+}
+
+.div_tel_child>img{
+   max-height:20px;
+}
+
+.ul_social_footer li>a>img{
+    max-height:20px;
+}
+
+.ul_social_footer{
+    list-style-type: none;
+}
+
+.ul_social_footer{
+    text-align:center;
+    padding: 0;
+}
+
+.div_tel_child>a{
+    margin-left:4px;
+    text-decoration: none;
+    color: #454447;
+    font-weight: 600;
+}
+
+.div_tel_child>a:hover{
+    margin-left:4px;
+ 
+}
+
+h3.h3-sign_form {
+    font-family: 'Roboto';
+    font-size: 35px;
+    text-transform: uppercase;
+    color: #87613d;
+    margin-bottom: 30px;
+    margin:15px;
+}
+
+button{
+    outline: none !important; 
+}
+
+button.form-btn {
+    position: absolute;
+    width: 50%;
+    height: 60px;
+    bottom: 0;
+    border: 0;
+    font-family: 'Roboto';
+    font-size: 24px;
+    text-transform: uppercase;
+    cursor: pointer;
+}
+
+.signIn input, .signUp .w100 .form_record{
+    width: 100%;
+}
+
+
+.signIn{
+        z-index: 1;
+        transform: perspective(100px) translate3d(100px, 0px, -30px);
+        opacity: 0.5;
+        width: 280px;
+        height: 470px;
+        position: absolute;
+        text-align: center;
+        background: #ede6d4;
+        border-radius: 7px;
+        padding: 30px 20px 0 20px;
+        box-shadow: 0 10px 50px 0 rgba(0, 0, 0, 0.25);
+        box-sizing: border-box;
+        
+}
+
+.signUp {
+    z-index: 2;
+    height: 690px;
+    margin-top: -100px;
+    width: 310px;
+    position: absolute;
+    text-align: center;
+    background: #ede6d4;
+    border-radius: 7px;
+    padding: 30px 20px 0 20px;
+    box-shadow: 0 10px 50px 0 rgba(0, 0, 0, 0.25);
+    box-sizing: border-box;
+}
+
+/* Два стиля которые относяться к модальным окнам записи клиента и авторизации и регистрации */
+
+.modalwin { 
+           
+    width: auto;
+    height:auto;
+    top: calc(50% - 240px);
+    left: calc(50% - 160px);
+    z-index:2; /* поверх всех */
+    display: none;  /* сначала невидим */
+    position: fixed; /* фиксированное позиционирование, окно стабильно при прокрутке */
+    padding:0px !important;
+ 
+}
+#shadow { 
+    position: fixed;
+    width:100%;
+    height:100%;
+    z-index:1; /* поверх всех  кроме окна*/
+    background:#000;
+    opacity: 0.5; /*прозрачность*/
+    left:0;
+    top:0;
+}
+
+
+footer{
+    grid-area: footer;
+    background-color:#2c5750 !important;
+}
+
+table.service_table{
+    /*background-color: #433228; */
+    border-radius: 4px;
+    color: black;
+    /*margin: auto; */
+}
+
+.input_min{
+    border: none;
+    text-decoration: none;
+    font-size: var(--font-size-btn);
+    outline: none;
+    border-radius: 5px;
+    padding: 5px 5px;
+}
+
+.service_table>thead th {
+    position: sticky;
+    top: 0;
+    background: var(--bg-color-first);
+    font-weight: normal;
+
+}
+
+.ul_name_service{
+    margin-right: 0.2em;
+}
+
+.clr_gray{
+    color: #454447 !important;
+}
+
+
+td.bordered {
+    border-bottom: 1px solid white;
+}
+
+.li_header{
+    list-style-type: none;
+}
+
+ul.li_header li>a{
+    color: #454447;
+    font-weight: 600;
+    text-decoration: none;
+    padding: 0; /* Обнуляем значения для всех браузеров*/
+    margin-left: 0.6rem;
+}
+
+ul.li_header li>a:hover { 
+    border-bottom: 2px solid currentColor;
+     /* Добавляем подчеркивание при наведении курсора мыши на ссылку */
+}
+
+ul.li_header li{
+    text-align: left;
+}
+
+form.form_record{
+    position: absolute;
+    text-align: center;
+    background: #ede6d4;
+    width: 320px;
+    height: 600px;
+    border-radius: 7px;
+    padding: 10px 20px 0 20px;
+    box-shadow: 0 10px 50px 0 rgba(0, 0, 0, 0.25);
+    box-sizing: border-box;
+    margin-top: -50px;
+
+    z-index: 2;
+}
+
+h3.h3-form_record {
+    font-family: 'Roboto';
+    font-size: 35px;
+    text-transform: uppercase;
+    color: #454447;
+    margin: 10px;
+}
+
+
+button.form_record-btn {
+    position: absolute;
+    width: 100%;
+    height: 60px;
+    bottom: 0;
+    border: 0;
+    font-family: 'Roboto';
+    font-size: 24px;
+    text-transform: uppercase;
+    cursor: pointer;
+    outline: none;
+    
+    left: 0;
+    border-radius: 0 0 5px 5px;
+    background-color: #454447;
+    color: #fff;
+    transition:all 0.3s linear;
+}
+
+button.form_record-btn:hover {
+    background-color:#2c5750;
+    color: #fff;
+}
+
+.div_main_photo_null{
+    grid-area: div_main_photo_null;
+}
+
+.we_provide_ul li{
+    list-style-type: none;
+    text-align: center;
+}
+
+.we_provide_ul li>img{
+    max-width: 200px; 
+    border-radius: 50%; 
+    margin-top: 0.8em; 
+    padding-bottom: 0.2em;
+}
+
+.we_provide_ul{
+    text-decoration:none; 
+    text-align:left; 
+    padding:10px;
+}
+
+.div_info_footer ul>li{
+    list-style-type: none;
+}
+
+.div_contact_footer ul>li{
+    list-style-type: none;
+}
+
+.btn_green{
+    background-color: #4CAF50; color: white;
+}
+
+
+.rectangle_btn{
+    cursor: pointer;
+    text-decoration: none;
+    color: white;
+    border: none;
+    font-size: var(--font-size-btn);
+    padding: 5px 5px;
+    text-align: center;
+    border-radius: 5px;
+}
+
+.btn_gray{
+    background-color: #e7e7e7; color: black;
+}
+
+.btn_black{
+    background-color: #343a40; color: white;
+}
+
+
+
+
+
+
+.div_front_side{
+    grid-area: div_front_side;
+    height: 800px; /* Высота блока */
+
+    background: url(/library/front_side.jpg) 100% 20% no-repeat; /* Добавляем фон */
+    background-size: cover; /* Масштабируем фон */
+}
+
+
+
+.grid>* {
+    background-color: #ede6d4;
+    padding: 8px 15px;
+    color: #ffffff;
+    font-size: 18px;
+    font-family: roboto;
+    /*     background-color: #ef9f7e; */
+}
+
+.grid_about_us>* {
+    background-color: #ede6d4;
+    padding: 8px 15px;
+    color: #ffffff;
+    font-size: 18px;
+    font-family: roboto;
+    /*     background-color: #ef9f7e; */
+}
+
+
+
+.grid_service>* {
+    background-color: #ede6d4;
+    padding: 8px 15px;
+    color: #ffffff;
+    font-size: 18px;
+    font-family: roboto;
+    /*     background-color: #ef9f7e; */
+}
+
+.grid_main_user>* {
+    background-color: #2c5750 !important;
+    padding: 8px 15px;
+    border-radius: 5px;
+    color: #ffffff;
+    font-size: 18px;
+    font-family: roboto;
+    /*     background-color: #ef9f7e; */
+}
+
+.aside_left{
+    grid-area: aside_left;
+    background-color: white !important;
+    display: none;
+}
+
+.aside_right{
+    grid-area: aside_right;
+    background-color: white !important;
+    display: none;
+}
+
+/* Код ниже вместе с keyframes предназначены для формы регистрации и авторизации */
+
+button.form-btn.sx {
+    left: 0;
+    border-radius: 0 0 0 5px;
+    background-color: #433228;
+    color: #fff;
+    transition:all 0.3s linear;
+}
+
+button.form-btn.sx:hover {
+    background-color:#2c5750;
+    color: #fff;
+}
+
+button.form-btn.sx.back {
+    background-color: rgba(0, 0, 0, 0.15);
+    transition:all 0.3s linear;
+}
+
+button.form-btn.sx.back:hover {
+    background-color: rgba(0, 0, 0, 0.35);
+}
+
+button.form-btn.dx {
+    right: 0;
+    border-radius: 0 0 5px 0;
+    background-color:#454447;
+    color: #fff;
+}
+
+.active-dx{
+	animation-name: foregrounding-dx;
+	animation-duration: 0.9s;
+	animation-fill-mode: forwards;
+}
+
+.active-sx{
+	animation-name: foregrounding-sx;
+	animation-duration: 0.9s;
+	animation-fill-mode: forwards;
+}
+
+.inactive-dx{
+	animation-name: overshadowing-dx;
+	animation-duration: 0.9s;
+	animation-fill-mode: forwards;
+}
+
+.inactive-sx{
+	animation-name: overshadowing-sx;
+	animation-duration: 0.9s;
+	animation-fill-mode: forwards;
+}
+
+@keyframes overshadowing-dx {
+	0%{
+		z-index:2;
+		transform: perspective(100px) translate3d(0px, 0px, 0px);
+		opacity: 1;
+		box-shadow: 0 10px 50px 0 rgba(0, 0, 0, 0.25);
+	}
+	100%{
+		z-index: 1;
+		transform: perspective(100px) translate3d(100px, 0px, -30px);
+		opacity: 0.5;
+		box-shadow: 0 10px 20px 0 rgba(0, 0, 0, 0.25);
+	}
+}
+
+@keyframes overshadowing-sx {
+	0%{
+		z-index:2;
+		transform: perspective(100px) translate3d(0px, 0px, 0px);
+		opacity: 1;
+		box-shadow: 0 10px 50px 0 rgba(0, 0, 0, 0.25);
+	}
+	100%{
+		z-index: 1;
+		transform: perspective(100px) translate3d(-100px, 0px, -30px);
+		opacity: 0.5;
+		box-shadow: 0 10px 20px 0 rgba(0, 0, 0, 0.25);
+	}
+}
+
+@keyframes foregrounding-dx {
+	0%{
+		z-index:1;
+		transform: perspective(100px) translate3d(100px, 0px, -30px);
+		opacity: 0.5;
+	}
+	50%{
+		z-index:2;
+		transform: perspective(100px) translate3d(400px, 0px, -30px);
+	}
+	100%{
+		z-index:2;
+		transform: perspective(100px) translate3d(0px, 0px, 0px);
+		opacity: 1;
+	}
+}
+
+@keyframes foregrounding-sx {
+	0%{
+		z-index:1;
+		transform: perspective(100px) translate3d(-100px, 0px, -30px);
+		opacity: 0.5;
+	}
+	50%{
+		z-index:2;
+		transform: perspective(100px) translate3d(-400px, 0px, -30px);
+	}
+	100%{
+		z-index:2;
+		transform: perspective(100px) translate3d(0px, 0px, 0px);
+		opacity: 1;
+	}
+}
+
+@media (min-width: 700px) { /* Если больше 768 делаем!*/
+
+
+    .grid_about_us{
+        display: grid;
+        grid-template-rows: 400px 1300px 450px 450px;
+        grid-template-areas:
+            "header_main"
+            "div_about_us"
+            "div_about_us_map"
+            "footer";
+    }
+
+
+}
+
+@media (min-width: 860px) { /* Если больше 768 делаем!*/
+    .grid {
+        grid-template-rows: 100px 800px 1100px 250px;
+    }
+
+    .grid_service{
+        grid-template-rows: 100px 2500px 250px;
+        grid-template-areas:
+            "header_main"
+            "div_main_service"
+            "footer";
+    } 
+
+
+
+}
+
+@media (min-width: 860px) { /* Если больше 768 делаем!*/
+    .grid_main_photo {
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-rows: 1fr 1fr 1fr;
+        grid-template-areas:
+            ". . ."
+            ". . ."
+            ". div_main_photo_full div_main_photo_full"
+         
+    }
+
+    .grid_div_we_provide {
+      
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        grid-template-rows: 1fr;
+        grid-template-areas:
+            ".   we_provide_first  we_provide_second  ."
+            ".   we_provide_third  .   ."
+    } 
+
+    .grid_main_header {
+        grid-template-rows: 1fr 2fr 0.1fr 2fr;
+        grid-template-areas:
+            "header_logo header_li header_dropdown_menu header_telephone"
+    }
+
+    .grid_div_footer{
+        grid-template-columns: 1fr 2fr 2fr;
+        grid-template-rows: 1fr 1fr;
+        grid-template-areas: 
+            "div_logo_footer   div_info_footer   div_contact_footer"
+            "div_social_footer div_social_footer div_social_footer";
+    }
+
+    .grid_service_price{
+        grid-template-columns: 1fr 1fr;
+        
+        grid-template-areas:
+            "div_list_of_services div_service_prices";
+    }
+
+    .grid_about_us{
+        grid-template-rows: 100px 1350px 450px 270px;
+        
+        grid-template-areas:
+            "header_main" 
+            "div_about_us"
+            "div_about_us_map"
+            "footer";
+    }
+
+    ul.li_header li{
+        display: inline;
+
+    }
+}
+
+
+
+
+
+
+@media (min-width: 997px) { /* Если больше 997 делаем!*/
+   .grid {
+        grid-template-rows: 100px 800px 500px 270px;
+    }
+
+    .grid_service{
+        grid-template-rows: 100px 2500px 250px;
+        grid-template-areas:
+            "header_main"
+            "div_main_service"
+            "footer";
+    } 
+
+
+}
+
+
+
+
+@media (min-width: 997px) { /* Если больше 768 делаем!*/
+    .grid_div_we_provide {
+        grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+        grid-template-areas:
+            ". we_provide_first we_provide_second we_provide_third ."
+    }
+
+    /* .grid_service{
+        grid-template-rows: 100px 1500px 250px;
+        grid-template-areas:
+            "header_main"
+            "div_main_service"
+            "footer";
+    }  */
+
+    /* .grid_service_price{
+        grid-template-columns: 1fr 2fr 2fr;
+        grid-template-areas:
+            "div_list_of_services div_service_prices div_service_prices";
+    } */
+
+    
+}
+
+
+@media (min-width: 1275px) { /* Если больше 768 делаем!*/
+
+
+
+    .grid_service{
+        grid-template-rows: 100px 1500px 250px;
+        grid-template-areas:
+            "header_main"
+            "div_main_service"
+            "footer";
+    } 
+
+    .grid_service_price{
+        grid-template-columns: 1fr 2fr 2fr;
+        grid-template-areas:
+            "div_list_of_services div_service_prices div_service_prices";
+    }
+    .grid_main_user {
+        grid-template-columns: 1fr 1fr 3fr 1fr;
+        grid-template-rows: 125px 4fr ;
+        grid-template-areas:
+            "aside_left     header_logo      header_li_user                              aside_right"
+
+     
+            "aside_left     aside_table      article_edit_personal_data_user        aside_right";
+    
+
+
+}
+
+
+
+.card_provide{
+    margin-left: 1.0em;
+}
+
+
+
+
