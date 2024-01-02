@@ -138,22 +138,40 @@ if(isset($_POST['service_btn'])){
     $service_provided = mysqli_real_escape_string($connect, trim($_POST['service_provided']));
 
     if($service_provided == 1){
-        $query = "UPDATE `visit`  SET  service_provided  = '$service_provided' AND date_of_visit <= Date(Now())
-                  WHERE id_visit = '$id'";
+        $query = "UPDATE `visit` SET `service_provided` = '$service_provided' WHERE `id_visit` = '$id' AND `date_of_visit` <= CURDATE()";
         $result = mysqli_query($connect, $query);
 
-        if($result)
+        if(mysqli_affected_rows($connect) > 0)
         {
-            $_SESSION['status'] = "Услуга была подтверждена как 'Готова'";
+            $_SESSION['success'] = "Услуга была подтверждена как 'Готова'";
             header('Location: /admin/consumptionmaterial/consumptionmaterial.php');
         }
         else
         {
-            
-            $_SESSION['success'] = "Услуга не была подтверждена как 'Готова' $query";
+            $_SESSION['error'] = "Услуга не была подтверждена как 'Готова' так дата больше текущей";
             header('Location: /admin/visit/visit.php');
         }
     }
+
+
+
+//    if($service_provided == 1){
+//        $query = "UPDATE `visit`  SET  service_provided  = '$service_provided' AND date_of_visit <= Date(Now())
+//                  WHERE id_visit = '$id'";
+//        $result = mysqli_query($connect, $query);
+//
+//        if($result)
+//        {
+//            $_SESSION['success'] = "Услуга была подтверждена как 'Готова'";
+//            header('Location: /admin/consumptionmaterial/consumptionmaterial.php');
+//        }
+//        else
+//        {
+//
+//            $_SESSION['error'] = "Услуга не была подтверждена как 'Готова' $query";
+//            header('Location: /admin/visit/visit.php');
+//        }
+//    }
 
 }
 
