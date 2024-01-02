@@ -95,7 +95,7 @@
             $query = "SELECT Sum(Service.price) as SumPrice, Employee.full_name, round(Sum(Service.price) * Employee.bonus_percentage / 100,2) as Allowance FROM
             Customer INNER JOIN Service INNER JOIN Employee INNER JOIN Visit 
             ON Customer.id_customer = Visit.id_customer AND Service.id_service = Visit.id_service AND Employee.id_employee = Visit.id_employee 
-            WHERE  TO_DAYS(NOW()) - TO_DAYS(Visit.date_of_visit) <= 30  group by Employee.full_name";
+            WHERE  TO_DAYS(NOW()) - TO_DAYS(Visit.date_of_visit) <= 30  group by Employee.full_name, Employee.bonus_percentage";
 
             $result = mysqli_query($connect, $query);
 
@@ -149,7 +149,7 @@
         <?php
             $query = "SELECT Material.name_material, Consumptionmaterial.date_consumption  , sum(Consumptionmaterial.consumed_quantity) as quantity
             from material inner join Consumptionmaterial on
-             Consumptionmaterial.id_material = Material.id_material where month(Consumptionmaterial.date_consumption)=month(now()) group by Material.name_material";
+             Consumptionmaterial.id_material = Material.id_material where month(Consumptionmaterial.date_consumption)=month(now()) group by Material.name_material, Consumptionmaterial.date_consumption";
 
             $result = mysqli_query($connect, $query);
 

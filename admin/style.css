@@ -315,7 +315,7 @@ textarea{
 #result::-webkit-scrollbar-track
 {
     background-color: var(--bg-color-first);
-    position: releative;
+    position: relative;
 }
 
 #result::-webkit-scrollbar
@@ -393,7 +393,8 @@ textarea{
     background-color: var(--bg-color-first);
 }
 
-@media (min-width: 1280px) { /* Если больше 768 делаем!*/
+@media (min-width: 1280px) {
+    /* Если больше 768 делаем!*/
     .grid_main_admin {
         grid-template-columns: 1fr 1fr 3fr 1fr 1fr;
         grid-template-rows: 125px 1fr 5fr 1.5fr 5fr 1fr 5fr 1fr;
@@ -410,10 +411,12 @@ textarea{
             "aside_left     aside_table query_consumption_material query_consumption_material   aside_right"
 
             "aside_left     aside_table footer                     footer                       aside_right"
-    
+
+    }
 }
 
-@media (min-width: 1280px) { /* Если больше 768 делаем!*/
+@media (min-width: 1280px) {
+    /* Если больше 768 делаем!*/
     .grid_setting {
         grid-template-columns: 1fr 1fr 2fr 2fr 1fr;
         grid-template-rows: 125px 1fr 5fr 1fr;
@@ -422,9 +425,11 @@ textarea{
             "aside_left     aside_table text_for_theme       text_for_theme    aside_right"
             "aside_left     aside_table setting_theme_color  setting_theme_font     aside_right"
             "aside_left     aside_table footer               footer            aside_right"
+    }
 }
 
-@media (min-width: 768px) { /* Если больше 768 делаем!*/
+@media (min-width: 768px) {
+    /* Если больше 768 делаем!*/
     .grid_edit {
         grid-template-columns: 1fr 1fr 3fr 1fr 1fr;
         grid-template-rows: 125px 5fr 1fr;
@@ -432,7 +437,8 @@ textarea{
             "aside_left     header_logo header_li            exit_account           aside_right"
             "aside_left     aside_table article_edit_table   article_edit_table     aside_right"
             "aside_left     aside_table footer               footer                 aside_right"
-    
+
+    }
 }
 
 @media (min-width: 768px) { /* Если больше 768 делаем!*/

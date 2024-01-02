@@ -1,10 +1,5 @@
 <?php
-session_start();
-require_once "../start.php";
-
-    $connect = mysqli_connect("localhost", "root", "", "beautysaloon");
-    $output = '';
-    $query = '';
+require_once('../db_connection.php');
 
 
     if(isset($_POST["query"]))
@@ -29,7 +24,7 @@ require_once "../start.php";
 
 
 
- 
+
 
     $result = mysqli_query($connect, $query);
 

@@ -830,34 +830,33 @@ button.form-btn.dx {
 }
 
 
-@media (min-width: 1275px) { /* Если больше 768 делаем!*/
-
-
-
-    .grid_service{
+@media (min-width: 1275px) {
+    /* Если больше 768 делаем!*/
+    .grid_service {
         grid-template-rows: 100px 1500px 250px;
         grid-template-areas:
             "header_main"
             "div_main_service"
             "footer";
-    } 
+    }
 
-    .grid_service_price{
+    .grid_service_price {
         grid-template-columns: 1fr 2fr 2fr;
         grid-template-areas:
             "div_list_of_services div_service_prices div_service_prices";
     }
+
     .grid_main_user {
         grid-template-columns: 1fr 1fr 3fr 1fr;
-        grid-template-rows: 125px 4fr ;
+        grid-template-rows: 125px 4fr;
         grid-template-areas:
             "aside_left     header_logo      header_li_user                              aside_right"
 
      
             "aside_left     aside_table      article_edit_personal_data_user        aside_right";
-    
 
 
+    }
 }
 
 
@@ -865,6 +864,260 @@ button.form-btn.dx {
 .card_provide{
     margin-left: 1.0em;
 }
+
+/*start footer*/
+
+.div_logo_footer{
+    margin-top: 0.5em;
+}
+
+.div_logo_footer a img{
+    max-height:60px;
+}
+
+/*end footer*/
+
+/* start page service*/
+
+.card {
+
+    width: 450px;
+    height: 250px;
+    background-color: #fff;
+    background: linear-gradient(#f8f8f8, #fff);
+    box-shadow: 0 8px 16px -8px rgba(0,0,0,0.4);
+    border-radius: 6px;
+    overflow: hidden;
+    position: relative;
+    margin: 1.5rem;
+}
+
+.card h1 {
+    text-align: center;
+}
+
+.card .additional {
+    position: absolute;
+    width: 150px;
+    height: 100%;
+    background: linear-gradient(#dE685E, #EE786E);
+    transition: width 0.4s;
+    overflow: hidden;
+    z-index: 2;
+}
+
+.card.green .additional {
+    background: linear-gradient(#92bCa6, #A2CCB6);
+}
+
+
+.card:hover .additional {
+    width: 100%;
+    border-radius: 0 5px 5px 0;
+}
+
+.card .additional .user-card {
+    width: 150px;
+    height: 100%;
+    position: relative;
+    float: left;
+}
+
+.card .additional .user-card::after {
+    content: "";
+    display: block;
+    position: absolute;
+    top: 10%;
+    right: -2px;
+    height: 80%;
+    border-left: 2px solid rgba(0,0,0,0.025);
+}
+
+.card .additional .user-card .level,
+.card .additional .user-card .points {
+    top: 15%;
+    color: #fff;
+    text-transform: uppercase;
+    font-size: 0.75em;
+    font-weight: bold;
+    background: rgba(0,0,0,0.15);
+    padding: 0.125rem 0.75rem;
+    border-radius: 100px;
+    white-space: nowrap;
+}
+
+.card .additional .user-card .points {
+    top: 85%;
+}
+
+.user-card>img{
+    max-width:140px;
+    border-radius:50%;
+    padding:4.8px;
+    margin-top:3em;
+}
+
+.card .additional .more-info {
+    width: 300px;
+    float: left;
+    position: absolute;
+    left: 150px;
+    height: 100%;
+}
+
+.card .additional .more-info h1 {
+    color: #fff;
+    margin-bottom: 0;
+}
+
+.card.green .additional .more-info h1 {
+    color: #224C36;
+}
+
+.card .additional .coords {
+    margin: 0 1rem;
+    color: #fff;
+    font-size: 1rem;
+}
+
+.card.green .additional .coords {
+    color: #325C46;
+}
+
+.card .additional .coords span + span {
+    float: right;
+}
+
+.coords{
+    padding: 5px;
+}
+
+.card .additional .stats {
+    font-size: 2rem;
+    display: flex;
+    position: absolute;
+    bottom: 1rem;
+    left: 1rem;
+    right: 1rem;
+    top: auto;
+    color: #fff;
+}
+
+.card.green .additional .stats {
+    color: #325C46;
+}
+
+.card .additional .stats > div {
+    flex: 1;
+    text-align: center;
+}
+
+.card .additional .stats i {
+    display: block;
+}
+
+.card .additional .stats div.title {
+    font-size: 0.75rem;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.card .additional .stats div.value {
+    font-size: 1.5rem;
+    font-weight: bold;
+    line-height: 1.5rem;
+}
+
+.card .additional .stats div.value.infinity {
+    font-size: 2.5rem;
+}
+
+.card .general {
+    width: 300px;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: 1;
+    box-sizing: border-box;
+    padding: 1rem;
+    padding-top: 0;
+}
+
+.card .general .more {
+    position: absolute;
+    bottom: 1rem;
+    right: 1rem;
+    font-size: 0.9em;
+}
+
+
+.todo-cmp {
+    margin: auto;
+    background: #ffffff;
+    color: #497081;
+    padding: 10px 30px;
+    border-radius: 5px;
+    box-shadow: 2px 2px 14px rgba(0, 0, 0, 0.15);
+    width: 180px;
+}
+
+.todo-cmp__header {
+    text-align: center;
+    padding: 10px 0;
+    border-bottom: 1px solid #ddd;
+}
+
+.todo-cmp__header h2 {
+    font-weight: 600;
+    font-size: 1.2rem;
+    margin: 4px auto;
+    padding: 0;
+}
+
+.todo-cmp__header p {
+    padding: 0 0 5px;
+    margin: 4px auto;
+    font-size: 0.8rem;
+}
+
+.todo-cmp__list {
+    list-style: none;
+    padding: 0;
+}
+
+.todo-cmp__list li {
+    padding: 10px 0 15px;
+    margin: 0;
+    text-align: left;
+    width: 100%;
+}
+
+.todo-cmp__list li label {
+    cursor: pointer;
+    font-size: 0.82rem;
+    width: 100%;
+    display: block;
+}
+
+.todo-cmp__list li label input {
+    float: right;
+    opacity: 0;
+}
+
+.todo-cmp__list li label span {
+    position: relative;
+    display: block;
+    transition: all 550ms ease-in-out;
+}
+
+
+
+
+
+
+/* end page service*/
+
 
 
 

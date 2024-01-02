@@ -1,3 +1,15 @@
+<?php
+// Подключение к базе данных
+$connect = mysqli_connect("localhost", "root", "", "beautysaloon");
+
+// Проверка соединения
+if (mysqli_connect_errno()) {
+    die("Failed to connect to MySQL: " . mysqli_connect_error());
+}
+
+
+?>
+
 <div id="popupWin" class="modalwin">
             <form class="form_record" method="post" action="/admin/query_add.php">
 
