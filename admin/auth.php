@@ -24,18 +24,18 @@
 			$result_login = mysqli_query($connect, $query_login);
 
 			if($result_login){
-				$_SESSION['success'] = "Пароль введён неверно";
+				$_SESSION['user_error'] = "Пароль введён неверно";
 			}
 
             $query = "SELECT `login` , `pass` FROM `administrator` WHERE login = '$admin_name' AND pass = md5('$admin_password')";
 
             $data = mysqli_query($connect,$query);
-            if(mysqli_num_rows($data) == 1 && $result_login) {
+            if(mysqli_num_rows($data) == 1) {
 
               $row = mysqli_fetch_assoc($data);
               $_SESSION["login_admin"] = $admin_name;
               $_SESSION["pass_admin"] = $admin_password;
-                
+
               header($admin_location);
               exit;
               //setcookie('user_id', $row['user_id'], time() + (60*60*24*30));
@@ -79,7 +79,7 @@
 			<?php
                 if(isset($_SESSION['user_error']) && $_SESSION['user_error'] != '')
                 {
-                    echo '<p>'.$_SESSION['user_error'].'</p>';
+                    echo '<p class="error">'.$_SESSION['user_error'].'</p>';
                     unset($_SESSION['user_error']);
                 }
             ?>

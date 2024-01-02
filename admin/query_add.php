@@ -121,17 +121,17 @@ if(isset($_POST['add_material']))
 
         if($result)
         {
-          $_SESSION['success'] = "Ваши данные были добавлены";
+          $_SESSION['success'] = "Ваши данные были добавлены успешно";
           header('Location: /admin/material/material.php');
         }
         else
         {
-          $_SESSION['status'] = "Ваши данные не были добавлены";
+          $_SESSION['error'] = "Ваши данные не были добавлены";
           header('Location: /admin/material/material.php');
         }
     }
     else {
-        $_SESSION['success'] = "Материал с таким названием и производителем уже существует";
+        $_SESSION['warning'] = "Материал с таким названием и производителем уже существует";
         header('Location: /admin/material/material.php');
     }
 }
@@ -144,7 +144,7 @@ if(isset($_POST['add_consumptionmaterial']))
 
         $query_quantity = "SELECT Material.quantity FROM material 
                             WHERE name_material ='$name_material' AND Material.manufacturer = '$material_manufacturer'
-                            group by name_material";
+                            group by Material.name_material";
         $result_quantity = mysqli_query($connect, $query_quantity);
 
         if(mysqli_num_rows($result_quantity) != 0) {
@@ -155,13 +155,23 @@ if(isset($_POST['add_consumptionmaterial']))
             }
 
             if($quantity < $consumed_quantity){
-                $_SESSION['success'] = "Количество на складе меньше нужного";
+                $_SESSION['warning'] = "Количество на складе меньше нужного";
                 header('Location: /admin/consumptionmaterial/consumptionmaterial.php');
             }
             else{
-                $query_update_material = "UPDATE Material SET Material.quantity = Material.quantity - '$consumed_quantity' WHERE id_material = 
-                (SELECT id_material  FROM material WHERE name_material ='$name_material' AND manufacturer = '$material_manufacturer' group by name_material) AND
-                Material.manufacturer = '$material_manufacturer'";
+                $query_update_material = "
+                    UPDATE Material 
+                    SET Material.quantity = Material.quantity - '$consumed_quantity' 
+                    WHERE id_material = (
+                        SELECT id_material 
+                        FROM (
+                            SELECT id_material 
+                            FROM material 
+                            WHERE name_material ='$name_material' AND manufacturer = '$material_manufacturer' 
+                            GROUP BY name_material
+                        ) AS subquery
+                    ) AND Material.manufacturer = '$material_manufacturer'
+                ";
 
                 $result_update = mysqli_query($connect, $query_update_material);
 
@@ -176,13 +186,12 @@ if(isset($_POST['add_consumptionmaterial']))
                 if($result)
                 {
                   $_SESSION['success'] = "Ваши данные были добавлены";
-                  header('Location: /admin/consumptionmaterial/consumptionmaterial.php');
                 }
                 else
                 {
-                  $_SESSION['status'] = "Ваши данные не были добавлены $query_update_material";
-                  header('Location: /admin/consumptionmaterial/consumptionmaterial.php');
+                  $_SESSION['error'] = "Ваши данные не были добавлены $query_update_material";
                 }
+                header('Location: /admin/consumptionmaterial/consumptionmaterial.php');
             }
         }
 }
@@ -224,7 +233,7 @@ if(isset($_POST['add_visit_through_freeorder']))
         }
         else
         {
-          $_SESSION['status'] = "Ваши данные не были добавлены $query";
+          $_SESSION['error'] = "Ваши данные не были добавлены $query";
           header('Location: /admin/freeorder/freeorder.php');
         }
     }
@@ -265,13 +274,12 @@ if(isset($_POST['add_visit']))
         if($result)
         {
           $_SESSION['success'] = "Ваши данные были добавлены";
-          header('Location: /admin/visit/visit.php');
         }
         else
         {
-          $_SESSION['status'] = "Ваши данные не были добавлены";
-          header('Location: /admin/visit/visit.php');
+          $_SESSION['error'] = "Ваши данные не были добавлены";
         }
+        header('Location: /admin/visit/visit.php');
     }
 }
 
@@ -323,17 +331,16 @@ if(isset($_POST['add_visit_user']))
                                         alert( "Запись прошла успешно" );
                                         }, 50);
                                     </script>';
-              header('Location: /');
             }
             else
             {
-              $_SESSION['success'] = '<script>
+              $_SESSION['error'] = '<script>
                                         setTimeout(function(){
                                         alert( "Ваши данные не были добавлены, проверьте правильность вводимых данных" );
                                         }, 50);
                                     </script>';
-              header('Location: /');
             }
+            header('Location: /');
         }
     }
 
@@ -368,17 +375,16 @@ if(isset($_POST['add_visit_user']))
                                         alert( "Запись прошла успешно" );
                                         }, 50);
                                     </script>';
-              header('Location: /');
             }
             else
             {
-              $_SESSION['success'] = '<script>
+              $_SESSION['error'] = '<script>
                                         setTimeout(function(){
                                         alert( "Ваши данные не были добавлены, проверьте правильность вводимых данных" );
                                         }, 50);
                                     </script>';
-              header('Location: /');
             }
+            header('Location: /');
         }
     }
     // else{
@@ -429,7 +435,7 @@ if(isset($_POST['button_auth'])) {
             //setcookie('username', $row['username'], time() + (60*60*24*30));
         }
         else {
-            $_SESSION['success'] = '<script>
+            $_SESSION['warning'] = '<script>
                                         setTimeout(function(){
                                         alert( "Извините, вы должны ввести правильное имя и/или пароль" );
                                         }, 50);

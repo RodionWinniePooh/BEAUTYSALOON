@@ -1,25 +1,3 @@
-<?php
-    session_start();
-
-    require_once "start.php";
-
-    if(isset($_POST["button_exit"])){
-        session_destroy();
-        header('Location: /admin/auth.php');
-        exit;
-    }
-
-    $servername = "localhost";
-    $username   = "root";
-    $password   = "";
-    $database   = "beautysaloon";
-
-    $connect = mysqli_connect($servername, $username, $password, $database);
-
-    $output = '';
-    $query = '';
-?>
-
 <?php require_once "block/head.php"; ?>
 
 <body>

@@ -6,9 +6,17 @@ if(isset($_POST["button_exit"])){
     header('Location: /admin/auth.php');
     exit;
 }
-$connect = mysqli_connect("localhost", "root", "", "beautysaloon");
+
+$servername = "localhost";
+$username   = "root";
+$password   = "";
+$database   = "beautysaloon";
+
 $query = '';
 $output = '';
+
+$connect = mysqli_connect($servername, $username, $password, $database) OR DIE('Ошибка подключения к базе данных');
+
 
 
 

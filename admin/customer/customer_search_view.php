@@ -1,5 +1,10 @@
 <?php
-require_once('../db_connection.php');
+session_start();
+require_once "../start.php";
+
+    $connect = mysqli_connect("localhost", "root", "", "beautysaloon");
+    $output = '';
+    $query = '';
 
 
     if(isset($_POST["query"]))
@@ -83,5 +88,3 @@ require_once('../db_connection.php');
     {
         echo '<h2 style="margin:10px;">Данные не найдены</h2>';
     }
-
-?>

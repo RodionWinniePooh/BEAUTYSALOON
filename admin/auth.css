@@ -52,3 +52,8 @@
             "aside_left . aside_right"
     }
 }
+
+
+p.error{
+    color: #f44336;
+}

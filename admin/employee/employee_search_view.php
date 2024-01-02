@@ -95,7 +95,7 @@ require_once "../start.php";
     }
     else
     {
-        echo '<h2 style="margin:10px;">Данные не найдены</h2>';
+        echo '<h2 class="warning" style="margin:10px;">Данные не найдены</h2>';
     }
 
 ?>

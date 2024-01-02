@@ -1,21 +1,3 @@
-<?php
-    session_start();
-    require_once "../start.php";
-    if(isset($_POST["button_exit"])){
-        session_destroy();
-        header('Location: /admin/auth.php');
-        exit;
-    }
-
-    $servername = "localhost";
-    $username   = "root";
-    $password   = "";
-    $database   = "beautysaloon";
-
-    $connect = mysqli_connect($servername, $username, $password, $database)  OR DIE('Ошибка подключения к базе данных');
-
-?>
-
 <?php require_once "../block/head.php"; ?>
 
 
@@ -37,17 +19,21 @@
                 </tr>
             </table>
             <?php
-
-                if(isset($_SESSION['success']) && $_SESSION['success'] != '')
-                {
-                    echo '<h2>'.$_SESSION['success'].'</h2>';
-                    unset($_SESSION['success']);
-                }
-                if(isset($_SESSION['status']) && $_SESSION['status'] != '')
-                {
-                    echo '<h2>'.$_SESSION['status'].'</h2>';
-                    unset($_SESSION['status']);
-                }
+            if(isset($_SESSION['success']) && $_SESSION['success'] != '')
+            {
+                echo '<h2 class="success">'.$_SESSION['success'].'</h2>';
+                unset($_SESSION['success']);
+            }
+            if(isset($_SESSION['error']) && $_SESSION['error'] != '')
+            {
+                echo '<h2 class="error">'.$_SESSION['error'].'</h2>';
+                unset($_SESSION['error']);
+            }
+            if(isset($_SESSION['warning']) && $_SESSION['warning'] != '')
+            {
+                echo '<h2 class="warning">'.$_SESSION['warning'].'</h2>';
+                unset($_SESSION['warning']);
+            }
             ?>
         </article>
 

@@ -12,6 +12,19 @@
 
 input {outline:none;}
 
+h2.success{
+    color: #4caf50;
+}
+
+h2.error{
+    color: #f44336;
+}
+
+h2.warning{
+    color: orange;
+}
+
+
 
 .grid {
     display: grid;
